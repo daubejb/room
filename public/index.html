@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>room</title>
+    <title>Rooms</title>
     <meta name="description" content="A way to quickly grab a room for a meeting">
     <link rel="icon" href="/images/daubedesign.ico">
 
@@ -16,12 +16,12 @@
 
     <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="room">
+    <meta name="application-name" content="Rooms">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="room">
+    <meta name="apple-mobile-web-app-title" content="Rooms">
 
     <!-- Homescreen icons -->
     <link rel="apple-touch-icon" href="/images/manifest/daubedesign-48x48.png">
@@ -91,18 +91,23 @@
       @-o-keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.2; } 100% { opacity: 1; } }
 
   </style>
-  <script src="./scripts/idb.js"></script>
+  <script async src="./scripts/idb.js"></script>
   <script async src="./scripts/main.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js"
+  onload="this.onload=function(){};handleClientLoad()"
+  onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script>
+  <script async defer src="./scripts/date.js"></script>
   </head>
   <body>
     <room-home>
       <slot>
         <div class="splash">
           <div class="header">
-            <div class="maintitle">Room</div>
+            <div class="maintitle">Rooms</div>
               <p role="main">A way to quickly grab a room for a meeting</p>
               <br>
-              <p id="loading" class="loading">Room is Loading... ⏳</p>
+              <p id="loading" class="loading">Rooms is Loading... ⏳</p>
             </div>
           <p class="footer">Created by <a href="https://twitter.com/jeffdaube">Jeffrey B. Daube</a>.
             Find this code on <a href="https://github.com/daubejb/room">GitHub</a>.</p>

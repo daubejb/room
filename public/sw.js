@@ -19,8 +19,20 @@ importScripts('workbox-sw.prod.v1.1.0.js');
  */
 const fileManifest = [
   {
+    "url": "elements/daube-button/daube-button.html",
+    "revision": "6d3074b66ab910ffa2ee05afae93cd95"
+  },
+  {
+    "url": "elements/daube-card/daube-card.html",
+    "revision": "5a91cdd9a3171a4780705a315625f5b4"
+  },
+  {
+    "url": "elements/daube-gcal-api/daube-gcal-api.html",
+    "revision": "79c72343dbadf9fa5bce52564b52ec8a"
+  },
+  {
     "url": "elements/daube-header/daube-header.html",
-    "revision": "ac2267d0faf13c952f51e7442a7d1902"
+    "revision": "e3b5e4f1af5ed83de10cd457ed73c8b6"
   },
   {
     "url": "elements/daube-user-icon/daube-user-icon.html",
@@ -28,11 +40,11 @@ const fileManifest = [
   },
   {
     "url": "elements/daube-user-menu/daube-user-menu.html",
-    "revision": "de67af3b57c9a67993b495aaeb588969"
+    "revision": "4374717da3eb6b6f02597fde7467a82d"
   },
   {
     "url": "elements/room-home.html",
-    "revision": "3dcb9c81d6497d6287862eb022819210"
+    "revision": "021926cc05511dd2f6373f24e297c0a6"
   },
   {
     "url": "elements/shared.css",
@@ -76,11 +88,15 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "6b1eddb46ae45ea49b8a392bcca2c166"
+    "revision": "f0bdecc7b7d0e6ebdaddc8d4b5b42275"
   },
   {
     "url": "manifest.json",
-    "revision": "f7d80f6af80a7876aef3b22b6fdf777d"
+    "revision": "4f4a3ffd1aade30b7a27425a5dcf1c1b"
+  },
+  {
+    "url": "scripts/date.js",
+    "revision": "497166e7f447a56c7b279271c6c6e6c8"
   },
   {
     "url": "scripts/idb.js",
@@ -92,7 +108,7 @@ const fileManifest = [
   },
   {
     "url": "scripts/main.js",
-    "revision": "59011f9899d0f3973c45beed90bc181d"
+    "revision": "b84826091c1215de4d33829674f5f5fa"
   },
   {
     "url": "webcomponentsjs/webcomponents-lite.js",

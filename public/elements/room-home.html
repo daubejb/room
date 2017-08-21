@@ -55,7 +55,7 @@
   </style>
   <div class="signin-view" id="signin">
     <div class="header">
-        <div class="maintitle">Room</div>
+        <div class="maintitle">Rooms</div>
         <p role="main">A way to quickly grab a room for a meeting</p>
         <br/>
         <button id="googlelogin" class="btn">Sign in with Google</button>
@@ -63,15 +63,21 @@
     <p class="footer">Created by <a href="https://twitter.com/jeffdaube">Jeffrey B. Daube</a>.
     Find this on <a href="https://github.com/daubejb/attic">GitHub</a>.</p>
   </div>
-  <daube-header id="daubeheader" style="display: none;">
-    <daube-user-icon></daube-user-icon>
-  </daube-header>
-  <daube-user-menu></daube-user-menu>
-
+  <div id="home" style="display:none;">
+    <daube-header id="daubeheader">
+      <daube-user-icon></daube-user-icon>
+    </daube-header>
+    <daube-user-menu></daube-user-menu>
+    <daube-card>
+      <daube-gcal-api></daube-gcal-api>
+    </daube-card>
+  </div>
 </template>
 <link async rel="import" href="./daube-header/daube-header.html">
 <link async rel="import" href="./daube-user-icon/daube-user-icon.html">
 <link async rel="import" href="./daube-user-menu/daube-user-menu.html">
+<link async rel="import" href="./daube-card/daube-card.html">
+<link async rel="import" href="./daube-gcal-api/daube-gcal-api.html">
 <script>
   (function() {
     let thisImportDoc = document.currentScript.ownerDocument;
@@ -103,17 +109,17 @@
         body.addEventListener('user-icon-clicked', e => {
           this.toggleUserMenu();
         });
-        var daubeheader = this.shadowRoot.querySelector('#daubeheader');
+        var home = this.shadowRoot.querySelector('#home');
         var signin = this.shadowRoot.querySelector('#signin');
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             console.log('user is authenticated');
             signin.style.display = 'none';
-            daubeheader.style.display = 'block';
+            home.style.display = 'block';
           } else {
             console.log('user is not authenticated');
             signin.style.display = 'block';
-            daubeheader.style.display = 'none';
+            home.style.display = 'none';
           }
         });
       }
