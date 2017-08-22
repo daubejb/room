@@ -68,8 +68,13 @@
       <daube-user-icon></daube-user-icon>
     </daube-header>
     <daube-user-menu></daube-user-menu>
+    <daube-dialog></daube-dialog>
     <daube-card>
-      <daube-gcal-api></daube-gcal-api>
+      <daube-table>
+        <h2>Available rooms</h2>
+        <p>To reserve a room, tap a checkbox</p>
+        <br>
+      </daube-table>
     </daube-card>
   </div>
 </template>
@@ -77,6 +82,8 @@
 <link async rel="import" href="./daube-user-icon/daube-user-icon.html">
 <link async rel="import" href="./daube-user-menu/daube-user-menu.html">
 <link async rel="import" href="./daube-card/daube-card.html">
+<link async rel="import" href="./daube-table/daube-table.html">
+<link async rel="import" href="./daube-dialog/daube-dialog.html">
 <link async rel="import" href="./daube-gcal-api/daube-gcal-api.html">
 <script>
   (function() {
@@ -109,6 +116,17 @@
         body.addEventListener('user-icon-clicked', e => {
           this.toggleUserMenu();
         });
+        body.addEventListener('book-room-clicked', e => {
+          
+          var rawTimeSel = e.detail.path[0];
+          console.log(rawTimeSel);
+          this.getDesiredTime(rawTimeSel);
+          
+          var rawIdName = e.detail.path[1];
+          console.log(rawIdName);
+          // this.getNameAndId();
+          this.toggleDialog();
+        })
         var home = this.shadowRoot.querySelector('#home');
         var signin = this.shadowRoot.querySelector('#signin');
         firebase.auth().onAuthStateChanged(function(user) {
@@ -122,6 +140,40 @@
             home.style.display = 'none';
           }
         });
+      }
+      getDesiredTime(rawTimeSel) {
+        var now = new Date();
+        var hour = now.getHours();
+        var minutes = now.getMinutes();
+        var stringTimeSel = rawTimeSel.className;
+        console.log('string time sel: ', stringTimeSel);
+        if (stringTimeSel.includes("nextthirty")) {
+          if (minutes < 5) {
+            now.setMinutes(0);
+          } else if (minutes < 35) {
+            now.setMinutes(30);
+          } else if (minutes >= 35) {
+            now.setMinutes(0);
+            hour = hour + 1;
+            now.setHours(hour);
+          }
+        
+          console.log('next thirty: ', now);
+        } else if (stringTimeSel.includes("thishour")) {
+          console.log('thishour: ', now);
+        } else if (stringTimeSel.includes("nexthour")) {
+          console.log('nexthour: ', now);
+        } else {
+          console.warn("Something went wrong, no desired time selected");
+        }
+      }
+      toggleDialog() {
+        var daubeDialog = this.shadowRoot.querySelector('daube-dialog');
+        if (daubeDialog.display) {
+          daubeDialog.removeAttribute('display');
+        } else {
+          daubeDialog.setAttribute('display', '');
+        }
       }
       toggleUserMenu() {
         var daubeUserMenu = this.shadowRoot.querySelector('daube-user-menu');

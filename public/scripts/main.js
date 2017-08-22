@@ -134,7 +134,7 @@ function findARoom() {
     ]
   }).then(function(response) {
     var freeBusy = response;
-    appendPre('Upcoming events:');
+    // appendPre('Upcoming events:');
     console.log(freeBusy);
   });
 }

@@ -27,12 +27,20 @@ const fileManifest = [
     "revision": "5a91cdd9a3171a4780705a315625f5b4"
   },
   {
+    "url": "elements/daube-dialog/daube-dialog.html",
+    "revision": "b5ee22bc1441e2da5a36b1d5e0e565af"
+  },
+  {
     "url": "elements/daube-gcal-api/daube-gcal-api.html",
     "revision": "79c72343dbadf9fa5bce52564b52ec8a"
   },
   {
     "url": "elements/daube-header/daube-header.html",
     "revision": "e3b5e4f1af5ed83de10cd457ed73c8b6"
+  },
+  {
+    "url": "elements/daube-table/daube-table.html",
+    "revision": "f15232663d834c1f7fa411314946dc50"
   },
   {
     "url": "elements/daube-user-icon/daube-user-icon.html",
@@ -44,7 +52,7 @@ const fileManifest = [
   },
   {
     "url": "elements/room-home.html",
-    "revision": "021926cc05511dd2f6373f24e297c0a6"
+    "revision": "38a87f9975fcd60b6f8ad444e8e42b8a"
   },
   {
     "url": "elements/shared.css",
@@ -108,7 +116,7 @@ const fileManifest = [
   },
   {
     "url": "scripts/main.js",
-    "revision": "b84826091c1215de4d33829674f5f5fa"
+    "revision": "a54a38a842e524047add8cf3e93b7fe2"
   },
   {
     "url": "webcomponentsjs/webcomponents-lite.js",
