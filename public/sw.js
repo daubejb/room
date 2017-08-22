@@ -52,7 +52,7 @@ const fileManifest = [
   },
   {
     "url": "elements/room-home.html",
-    "revision": "38a87f9975fcd60b6f8ad444e8e42b8a"
+    "revision": "583463e0c43ca57a0d3ee55007de5a00"
   },
   {
     "url": "elements/shared.css",
@@ -96,7 +96,7 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "f0bdecc7b7d0e6ebdaddc8d4b5b42275"
+    "revision": "24cef59445fe1aca3bfe80957037635d"
   },
   {
     "url": "manifest.json",
