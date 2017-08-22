@@ -80,8 +80,10 @@
     <daube-dialog>
       <h3 slot="question">Reserve this room?</h3>
       <p slot="message">Please tap reserve to confirm.</p>
+      <p slot="details" id="details"></p>
       <button class="btn secondary" slot="negative">Cancel</button>
       <button class="btn primary" slot="positive">Reserve</button>
+      
     </daube-dialog>
     <daube-card>
       <daube-table>
@@ -133,10 +135,18 @@
         body.addEventListener('book-room-clicked', e => {
           var rawTimeSel = e.detail.path[0];
           console.log(rawTimeSel);
-          var startTime, endTime = this.getDesiredTime(rawTimeSel);
+          var times = this.getDesiredTime(rawTimeSel);
+          var sTime = new Date(times[0]).toString("hh:mm tt");
+          var eTime = new Date(times[1]).toString("hh:mm tt");
+          console.log('eTime: ', eTime);
           var resourceId = e.detail.path[1].id;
+
           console.log('raw id test: ', resourceId);
           var resourceName = e.detail.path[1].children[0].innerHTML;
+          var details = this.shadowRoot.querySelector('#details');
+          details.innerHTML = ('Name: ' + resourceName + '<br>' + 'Start: ' + sTime + '<br>' + 'End: ' + eTime);
+
+          console.log('details: ', details);
           console.log('resource Name: ', resourceName);
           this.toggleDialog();
         })
@@ -165,7 +175,7 @@
         if (stringTimeSel.includes("nextthirty")) {
           if (minutes < 5) {
             now.setMinutes(0);
-          } else if (minutes >= 5) {
+          } else if (minutes < 35) {
             now.setMinutes(30);
           } else if (minutes >= 35) {
             now.setMinutes(0);
@@ -178,7 +188,7 @@
         } else if (stringTimeSel.includes("thishour")) {
           if (minutes < 15) {
             now.setMinutes(0);
-          } else if (minutes >= 15) {
+          } else if (minutes < 45) {
             now.setMinutes(30);
           } else if (minutes >= 45) {
             now.setMinutes(0);
@@ -191,7 +201,7 @@
         } else if (stringTimeSel.includes("nexthour")) {
           if (minutes < 5) {
             now.setMinutes(0);
-          } else if (minutes >= 5) {
+          } else if (minutes < 35) {
             now.setMinutes(30);
           } else if (minutes >= 35) {
             now.setMinutes(0);
@@ -208,7 +218,8 @@
         var startTime = new Date(now.getTime());
         console.log('start time:', startTime);
         console.log('end time: ', endTime);
-        return startTime, endTime
+        var times = [startTime, endTime];
+        return times
       }
       toggleDialog() {
         var daubeDialog = this.shadowRoot.querySelector('daube-dialog');
