@@ -68,7 +68,12 @@
       <daube-user-icon></daube-user-icon>
     </daube-header>
     <daube-user-menu></daube-user-menu>
-    <daube-dialog></daube-dialog>
+    <daube-dialog>
+      <h3 slot="question">Reserve this room?</h3>
+      <p slot="message">Please tap reserve to confirm.</p>
+      <button slot="negative">CANCEL</button>
+      <button slot="positive">RESERVE</button>
+    </daube-dialog>
     <daube-card>
       <daube-table>
         <h2>Available rooms</h2>
@@ -117,14 +122,13 @@
           this.toggleUserMenu();
         });
         body.addEventListener('book-room-clicked', e => {
-          
           var rawTimeSel = e.detail.path[0];
           console.log(rawTimeSel);
           var startTime, endTime = this.getDesiredTime(rawTimeSel);
-          
-          var rawIdName = e.detail.path[1];
-          console.log(rawIdName);
-          // this.getNameAndId();
+          var resourceId = e.detail.path[1].id;
+          console.log('raw id test: ', resourceId);
+          var resourceName = e.detail.path[1].children[0].innerHTML;
+          console.log('resource Name: ', resourceName);
           this.toggleDialog();
         })
         var home = this.shadowRoot.querySelector('#home');

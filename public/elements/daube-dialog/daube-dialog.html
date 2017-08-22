@@ -2,7 +2,7 @@
 <template id="daube-dialog">
   <style>
     #dialogmodal {
-      position: absolute;
+      position: fixed;
       border-radius: 3px;
       box-shadow:  0px 11px 15px -7px rgba(0, 0, 0, 0.2),
                    0px 24px 38px 3px rgba(0, 0, 0, 0.14),
@@ -10,7 +10,7 @@
       padding: 2rem;
       background-color: white;
       margin: auto;
-      width: 40rem;
+      width: 67%;
       height: 13rem;
       z-index: 2;
       top: 0;
@@ -32,8 +32,8 @@
   </style>
   <div id="entirescreen" style="display: none;"></div>
   <div id="dialogmodal" style="display: none;">
-    <h3 id="question">Ready to go?</h3>
-    <p id="message">Please click continue to proceed.</p>
+    <slot name="question"></slot>
+    <slot name="message"></slot>
     <slot name="negative"></slot>
     <slot name="positive"></slot>
   </div>

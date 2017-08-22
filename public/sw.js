@@ -28,7 +28,7 @@ const fileManifest = [
   },
   {
     "url": "elements/daube-dialog/daube-dialog.html",
-    "revision": "b5ee22bc1441e2da5a36b1d5e0e565af"
+    "revision": "3341ff310089a63afa38b2262e810aed"
   },
   {
     "url": "elements/daube-gcal-api/daube-gcal-api.html",
@@ -52,7 +52,7 @@ const fileManifest = [
   },
   {
     "url": "elements/room-home.html",
-    "revision": "583463e0c43ca57a0d3ee55007de5a00"
+    "revision": "24b762f19cef67fbaed9974c602adbbd"
   },
   {
     "url": "elements/shared.css",
