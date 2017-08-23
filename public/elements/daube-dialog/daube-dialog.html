@@ -79,12 +79,17 @@
           console.log('entire screen clicked');
           this.removeAttribute('display');
         });
-        var rsrvBtn = this.querySelector(".primary");
-        rsrvBtn.addEventListener('click', e => {
+        var primBtn = this.querySelector(".primary");
+        primBtn.addEventListener('click', e => {
           console.log('primary button clicked');
           handleAuthClick(e);
           reserveTheRoom();
-        })
+        });
+        var secoBtn = this.querySelector(".secondary");
+        secoBtn.addEventListener('click', e => {
+          console.log('secondary button clicked');
+          this.removeAttribute('display');
+        });
       }
       initShadowDom() {
         let shadowRoot = this.attachShadow({mode: 'open'});

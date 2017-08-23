@@ -28,7 +28,7 @@ const fileManifest = [
   },
   {
     "url": "elements/daube-dialog/daube-dialog.html",
-    "revision": "6ed14cbd07d1541da21dbc80ddffecac"
+    "revision": "a78eefc84c3cdbd32ba2cf3727b144bf"
   },
   {
     "url": "elements/daube-gcal-api/daube-gcal-api.html",
