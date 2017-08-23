@@ -252,7 +252,8 @@
         idbKeyval.set('photo', photo).catch(err => console.log('fail',err));
         console.log(displayName, emailAddress, photo);
         // ...
-      }).catch(function(error) {
+      })
+      .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
