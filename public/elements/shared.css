@@ -14,12 +14,9 @@
     --primary-dark: #005005;
 
     --secondary-color: #4c4c4c;
-  
     --text-primary-white: rgba(255,255,255,0.81);
-  
     --back-grey: rgba(225,226,225,1);
     --background-color: whitesmoke;
-  
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     box-sizing: border-box;
     font-size: 16px;

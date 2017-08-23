@@ -78,6 +78,14 @@
         entirescreen.addEventListener('click', e => {
           console.log('entire screen clicked');
           this.removeAttribute('display');
+        });
+        var rsrvBtn = this.querySelector(".primary");
+        rsrvBtn.addEventListener('click', e => {
+          console.log('primary button clicked');
+          if (gapi.auth2.GoogleAuth === false) {
+            handleAuthClick(e);
+          }
+          reserveTheRoom(e); //JEFF THIS IS WHERE YOU ARE
         })
       }
       initShadowDom() {

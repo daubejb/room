@@ -48,9 +48,10 @@ const idbKeyval = {
 
 var CLIENT_ID = '894633030567-7pbvmadlounjlkhjhbhlq453egekki48.apps.googleusercontent.com';
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+var SCOPES = "https://www.googleapis.com/auth/calendar";
 var authorizeButton = document.getElementById('authorize-button');
 var signoutButton = document.getElementById('signout-button');
+
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
@@ -75,7 +76,7 @@ function initClient() {
 function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     console.log('signed in');
-    findARoom();
+    // findARoom();
   } else {
     console.log()
   }
@@ -136,5 +137,32 @@ function findARoom() {
     var freeBusy = response;
     // appendPre('Upcoming events:');
     console.log(freeBusy);
+  });
+}
+
+function reserveTheRoom() {
+  var event = {
+    'summary': 'Rooms - Rapid Room Reservation',
+    'description': 'A quick meeting',
+    "start": {
+      "dateTime": "2017-08-23T18:00:00-05:00"
+    },
+    "end": {
+      "dateTime": "2017-08-23T19:00:00-05:00"
+    },
+    "attendees": [
+      {
+        "email": "redhat.com_72616c656967682d3134773130362d6d6f6e6f706f6c792d382d702d3363486c6d53395a4b@resource.calendar.google.com"
+      }
+    ]
+  }
+
+  var request = gapi.client.calendar.events.insert({
+    'calendarId': 'primary',
+    'resource': event
+  });
+
+  request.execute(function(event) {
+    appendPre('Event create: ' + event.htmlLink);
   });
 }

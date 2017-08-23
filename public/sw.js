@@ -28,7 +28,7 @@ const fileManifest = [
   },
   {
     "url": "elements/daube-dialog/daube-dialog.html",
-    "revision": "f07f238645ef0daac5bf87bb5483ea5d"
+    "revision": "980046aef79a799573f6e0bd1d9f1bb3"
   },
   {
     "url": "elements/daube-gcal-api/daube-gcal-api.html",
@@ -52,11 +52,11 @@ const fileManifest = [
   },
   {
     "url": "elements/room-home.html",
-    "revision": "d21250eda5d6eb4100566d7312c04ebb"
+    "revision": "22dc4736bd12bdd9553eb6af208c7d07"
   },
   {
     "url": "elements/shared.css",
-    "revision": "fcacd553f553a336579534ea347a0224"
+    "revision": "f675113017abf87ea43b2e353dcd179c"
   },
   {
     "url": "images/daubedesign.ico",
@@ -96,7 +96,7 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "24cef59445fe1aca3bfe80957037635d"
+    "revision": "f0bdecc7b7d0e6ebdaddc8d4b5b42275"
   },
   {
     "url": "manifest.json",
@@ -116,7 +116,7 @@ const fileManifest = [
   },
   {
     "url": "scripts/main.js",
-    "revision": "a54a38a842e524047add8cf3e93b7fe2"
+    "revision": "9b7fc5fc6962dfdece94a3c30d327112"
   },
   {
     "url": "webcomponentsjs/webcomponents-lite.js",
