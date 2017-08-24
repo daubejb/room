@@ -116,7 +116,7 @@ const fileManifest = [
   },
   {
     "url": "scripts/main.js",
-    "revision": "9b7fc5fc6962dfdece94a3c30d327112"
+    "revision": "50430da270b1d99b2f7cb476ac05abc6"
   },
   {
     "url": "webcomponentsjs/webcomponents-lite.js",

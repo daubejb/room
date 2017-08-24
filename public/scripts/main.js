@@ -46,7 +46,7 @@ const idbKeyval = {
   }
 };
 
-var CLIENT_ID = '894633030567-7pbvmadlounjlkhjhbhlq453egekki48.apps.googleusercontent.com';
+var CLIENT_ID = '894633030567-dsnukjrj8jaeo7b4mqk94b4b88h3bian.apps.googleusercontent.com';
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 var SCOPES = "https://www.googleapis.com/auth/calendar";
 var authorizeButton = document.getElementById('authorize-button');
