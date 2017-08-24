@@ -40,7 +40,7 @@ const fileManifest = [
   },
   {
     "url": "elements/daube-table/daube-table.html",
-    "revision": "f15232663d834c1f7fa411314946dc50"
+    "revision": "6dc9200ad370003ccb6101c8935ddff9"
   },
   {
     "url": "elements/daube-user-icon/daube-user-icon.html",
@@ -52,7 +52,7 @@ const fileManifest = [
   },
   {
     "url": "elements/room-home.html",
-    "revision": "572ecf38be0f79e6971af7f956e1ba22"
+    "revision": "95cb9bf7fed30f598af37a7c0a7a825f"
   },
   {
     "url": "elements/shared.css",
@@ -116,7 +116,7 @@ const fileManifest = [
   },
   {
     "url": "scripts/main.js",
-    "revision": "50430da270b1d99b2f7cb476ac05abc6"
+    "revision": "c2556685d21455b56b632ac21ace78c4"
   },
   {
     "url": "webcomponentsjs/webcomponents-lite.js",

@@ -140,23 +140,26 @@ function findARoom() {
   });
 }
 
-function reserveTheRoom() {
+function reserveTheRoom() {var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+  var roomId = sessionStorage.getItem('roomId');
+  var startTime = sessionStorage.getItem('startTime');
+  var endTime = sessionStorage.getItem('endTime');
   var event = {
-    'summary': 'Rooms - Rapid Room Reservation',
+    'summary': 'Rooms - Rapid Reservation',
     'description': 'A quick meeting',
     "start": {
-      "dateTime": "2017-08-23T18:00:00-05:00"
+      "dateTime": startTime
     },
     "end": {
-      "dateTime": "2017-08-23T19:00:00-05:00"
+      "dateTime": endTime
     },
     "attendees": [
       {
-        "email": "redhat.com_72616c656967682d3134773130362d6d6f6e6f706f6c792d382d702d3363486c6d53395a4b@resource.calendar.google.com"
+        "email": roomId
       }
     ]
   }
-
+  console.log(event);
   var request = gapi.client.calendar.events.insert({
     'calendarId': 'primary',
     'resource': event
